@@ -6,17 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  name!: string;
+  email!: string;
+  password!: string;
+  router: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  name = "prudhvi";
+  onsubmit(){
 
-  isValidUser = false;
-  departments = ["cse","IT","MECH","ECE"]
-  onClick(){
-    alert("Button clicked");
+    console.log(this.name+", "+this.email+", "+this.password);
+  
+  
+  
+    const userObj ={
+  
+      "name":this.name,
+  
+      "email":this.email,
+  
+      "password":this.password
+  
+    };
+  
+    console.log(userObj);
+  
+    alert("Successfully Registered")
+  
+    this.router.navigateByUrl("/login")
+  
   }
  
 
