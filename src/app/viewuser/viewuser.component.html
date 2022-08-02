@@ -1,0 +1,30 @@
+<p>viewuser works!</p>
+<table class="table table-bordered" *ngIf="viewuser">
+
+    <tbody>
+        <tr>
+            <th>id</th>
+            <td>{{viewuser.id}}</td>
+        </tr>
+        <tr>
+            <th>name</th>
+            <td>{{viewuser.name}}</td>
+        </tr>
+        <tr>
+            <th>email</th>
+            <td>{{viewuser.email}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+
+                <button type="button" class="btn btn-danger" (click)="deleteuser()">delete
+                </button>&nbsp;
+                <button type="button" class="btn btn-success" routerLink="/viewuser">back</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="!viewuser">
+    no records
+</div>

@@ -1,0 +1,33 @@
+<p>listuser works!</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>sno</th>
+            <th>id</th>
+            <th>Name</th>
+            <th>email</th>
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="listuser">
+        <tr *ngFor="let u of listuser;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>
+                <a routerLink="/viewuser" class="btn btn-primary">view</a>
+                &nbsp;&nbsp;
+                <a routerLink="/edituser" class="btn btn-info">edit</a>
+                &nbsp;&nbsp;
+                <button type="button"class="btn btn-danger"
+                    (click)="deleteuser()">delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="!listuser">
+    no records
+</div>

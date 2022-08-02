@@ -1,0 +1,32 @@
+<p>edituser works!</p>
+<form>
+    <table class="table table-bordered" *ngIf="edituser">
+        <tbody>
+            <tr>
+                <th>id</th>
+                <td>
+                    <input type="text" name="id" id="id" value="{{edituser.id}}"readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>name</th>
+                <td>
+                    <input type="text" name="name" id="name" value="{{edituser.name}}">
+                </td>
+            </tr>
+            <tr>
+                <th>email</th>
+                <th>
+                    <input type="text" name="name" id="email" value="{{edituser.email}}">
+                </th>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <button type="button" class="btn btn-success"
+                    (click)="updateuser()">update</button>&nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
